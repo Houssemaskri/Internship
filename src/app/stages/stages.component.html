@@ -1,0 +1,67 @@
+<div class="d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <!-- Title for the page -->
+    <div class="mb-4 text-center">
+      <h3>Stages</h3>
+    </div>
+  
+    <!-- Search Section -->
+    <div class="mb-4 w-75">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Search by title or description" 
+        [(ngModel)]="searchTerm"
+      >
+      <button 
+        class="btn btn-primary btn-lg text-uppercase mt-3 w-100" 
+        (click)="search()"
+      >
+        Search
+      </button>
+    </div>
+  
+    <!-- Table Section -->
+    <div class="table table-responsive w-100">
+      <table class="table table-hover table-bordered shadow-sm">
+        <thead class="thead-custom">
+          <tr>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">Titre</th>
+            <th scope="col" class="text-center">Description</th>
+            <th scope="col" class="text-center">Entreprise</th>
+            <th scope="col" class="text-center">Disponible</th>
+            <th scope="col" class="text-center">Nbr d'Intérêts</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stage of filteredStages">
+            <td class="text-center">{{ stage.id }}</td>
+            <td class="text-center">{{ stage.titre }}</td>
+            <td class="text-center">{{ stage.Description }}</td>
+            <td class="text-center">{{ stage.Entreprise }}</td>
+            <td class="text-center">
+              <span [ngClass]="{'badge badge-success': stage.Disponible, 'badge badge-secondary': !stage.Disponible}">
+                {{ stage.Disponible ? 'Disponible' : 'Indisponible' }}
+              </span>
+            </td>
+            <td class="text-center">{{ stage.nbrInteresse }}</td>
+            <td class="text-center">
+              <button 
+                class="btn btn-primary btn-sm text-uppercase" 
+                (click)="interesse(stage)"
+              >
+                Intéresser
+              </button>
+              <button 
+                class="btn btn-danger btn-sm text-uppercase" 
+                (click)="delete(stage.id)"
+              >
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

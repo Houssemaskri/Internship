@@ -1,0 +1,24 @@
+<form [formGroup]="stage">
+    <label for="titre">Titre :</label>
+    <input id="titre" formControlName="titre">
+    <div *ngIf="stage.get('titre')!.invalid && stage.get('titre')!.touched">
+        Title required!
+    </div>
+
+    <label for="Description">Description :</label>
+    <input id="Description" formControlName="Description">
+    <div *ngIf="stage.get('Description')!.invalid && stage.get('Description')!.touched">
+        Description required!
+    </div>
+
+    <label for="Entreprise">Entreprise :</label>
+    <input id="Entreprise" formControlName="Entreprise">
+    <div *ngIf="stage.get('Entreprise')!.invalid && stage.get('Entreprise')!.touched">
+        Entreprise invalid!
+        <div *ngIf="stage.get('Entreprise')!.errors?.['required']" class="alert alert-danger">Entreprise is required</div>
+        <div *ngIf="stage.get('Entreprise')!.errors?.['pattern']" class="alert alert-danger">Capital letter is required</div>
+    </div>
+
+
+    <input type="submit" value="Add stage" [disabled]="stage.invalid" (click)="add()">
+</form>

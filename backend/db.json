@@ -1,0 +1,20 @@
+{
+  "stage": [
+    {
+      "id": "2fbb",
+      "titre": "aaa",
+      "Description": "BBB",
+      "Entreprise": "Uuu",
+      "nbrInteresse": 5,
+      "Disponible": true
+    },
+    {
+      "id": "ffe8",
+      "titre": "zzz",
+      "Description": "zzz",
+      "Entreprise": "A",
+      "nbrInteresse": 5,
+      "Disponible": true
+    }
+  ]
+}

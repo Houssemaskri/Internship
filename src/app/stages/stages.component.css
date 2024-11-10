@@ -1,0 +1,62 @@
+/* Centering the container vertically and horizontally */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+
+
+
+/* Styling for the title */
+h3 {
+    color: #333;
+    font-weight: 600;
+    font-size: 2rem; /* Larger title size */
+    margin-bottom: 1.5rem; /* Spacing below title */
+}
+
+/* Custom table header and hover effects */
+.thead-custom {
+    background-color: #343a40; /* Dark header */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.0rem; /* Larger font size */
+    
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5; /* Light gray highlight on hover */
+}
+.table{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/* Badge styling */
+.badge-success {
+    background-color: #28a745; /* Bootstrap success green */
+    border-radius: 7px; /* Rounded corners */
+    font-size: 0.9rem; /* Smaller font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.badge-secondary {
+    background-color: #6c757d; /* Bootstrap secondary gray */
+    border-radius: 7px; /* Rounded corners */
+    font-size: 0.9rem; /* Smaller font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
